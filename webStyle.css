@@ -1,0 +1,719 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(#ffdad5, #fff7f9);
+    color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Outfit", sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.6);
+    min-width: 160px;
+    z-index: 1;
+    text-align: center;
+    padding: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Section Styles */
+section {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Home Section */
+#home {
+    background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=2984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 100px;
+    font-weight: 700;
+    color: #F2D8CE;
+    text-shadow: none;
+}
+
+.ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+}
+
+.ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+/* New Zealand Section */
+#new-zealand {
+    background-image: url('https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #F2EDD0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start; 
+    flex-direction: column;
+    position: relative; 
+}
+
+#new-zealand h1 {
+    font-size: 64px; 
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20px; 
+    line-height: 1.2;
+    color: white
+}
+
+/* Japan Section */
+#japan {
+    background-image: url('https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=2300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start; 
+    flex-direction: column;
+}
+
+#japan h1 {
+    font-size: 64px; 
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20px; 
+    line-height: 1.2;
+    color: white;
+}
+
+/* Switzerland Section */
+#switzerland {
+    background-image: url('https://images.unsplash.com/photo-1601801017546-1dd109433165?q=80&w=1979&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Align content to the top */
+    flex-direction: column;
+}
+
+#switzerland h1 {
+    font-size: 64px; 
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20px; 
+    line-height: 1.2;
+    color: white;
+}
+
+/* Taiwan Section */
+#taiwan {
+    background-image: url('https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Align content to the top */
+    flex-direction: column;
+}
+
+#taiwan h1 {
+    font-size: 64px; 
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20px; 
+    line-height: 1.2;
+    color: white;
+}
+
+/* Italy Section */
+#italy {
+    background-image: url('https://images.unsplash.com/photo-1475688621402-4257c812d6db?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Align content to the top */
+    flex-direction: column;
+}
+
+#italy h1 {
+    font-size: 64px; 
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20px; 
+    line-height: 1.2;
+    color: white;
+}
+
+/* Indonesia Section */
+#indonesia {
+    background-image: url('https://images.unsplash.com/photo-1557093793-e196ae071479?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Align content to the top */
+    flex-direction: column;
+}
+
+#indonesia h1 {
+    font-size: 64px; 
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20px; 
+    line-height: 1.2;
+    color: white;
+}
+
+/* Contact Section */
+.contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url('https://images.unsplash.com/photo-1726853550443-20b90f727b9b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title h2 {
+    font-weight: 600;
+    color: #a363aa;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #a363aa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+    color: #a9a9a9;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    cursor: pointer;
+}
+
+.contact-left button img {
+    height: 15px;
+}
+
+.contact-right img {
+    width: 500px;
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    .contact-inputs {
+        width: 80vw;
+    }
+    .contact-right {
+        display: none;
+    }
+}
+/* Nav bar logo */
+@media only screen and (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+
+    .header {
+        padding: 20px 20px;
+    }
+    
+    .navbar a {
+        margin-left: 20px;
+    }
+}
+
+/* Button Styles */
+/* Section Styles with semi-transparent background and button on top */
+section {
+    position: relative; /* This allows the button to be positioned relative to the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+section h1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+section p {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: left;
+}
+
+/* Dark background overlay for the sections */
+#new-zealand, 
+#japan, 
+#switzerland, 
+#taiwan, 
+#italy, 
+#indonesia {
+    position: relative; /* Important for layering */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+/* Dark overlay */
+#new-zealand::before, 
+#japan::before, 
+#switzerland::before, 
+#taiwan::before, 
+#italy::before, 
+#indonesia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* darker overlay */
+    z-index: 1; /* overlay stays behind the content */
+}
+
+/* Ensure the button is on top of the semi-transparent background */
+#new-zealand .btn, 
+#japan .btn, 
+#switzerland .btn, 
+#taiwan .btn, 
+#italy .btn, 
+#indonesia .btn {
+    position: absolute; 
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #444; /* button text */
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #fff; /*  button background */
+    z-index: 10; /* ensure the button is on top */
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #222; /* Even darker on hover */
+}
+
+/* Add z-index to the h1 text to ensure it stays above the background */
+/* Add z-index to the h1 text to ensure it stays above the background */
+.background-new-zealand h1,
+.background-japan h1,
+.background-switzerland h1,
+.background-taiwan h1,
+.background-italy h1,
+.background-indonesia h1 {
+    z-index: 5;
+    position: relative;
+    color: white;
+}
+
+
+
+.background-new-zealand {
+    background-image: url('https://images.unsplash.com/photo-1499162526249-f5b8b9ba9923?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.background-japan {
+    background-image: url('https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    height: 100vh; 
+}
+
+.background-switzerland {
+    background-image: url('https://images.unsplash.com/photo-1530878902700-5ad4f9e4c318?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    height: 100vh; 
+}
+
+.background-taiwan {
+    background-image: url('https://images.unsplash.com/photo-1508248467877-aec1b08de376?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    height: 100vh; 
+}
+
+.background-italy {
+    background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    height: 100vh; 
+}
+
+.background-indonesia {
+    background-image: url('https://images.unsplash.com/photo-1528265417219-1a288ae08573?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    height: 100vh; 
+}
+
+.solid-navbar {
+    position: relative; /* Changed from fixed to relative */
+    width: 100%;
+    padding: 20px 100px;
+    background-color: rgba(0, 0, 0, 0.8); /* Solid background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a solid effect */
+}
+
+.body-content {
+    padding-top: 80px; /* Add top padding to push down the content */
+}
+
+.background-new-zealand h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+    font-size: 72px;
+}
+
+.background-japan h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+    font-size: 72px;
+}
+
+.background-switzerland h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+    font-size: 72px;
+}
+
+.background-taiwan h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+    font-size: 72px;
+}
+
+.background-italy h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+    font-size: 72px;
+}
+
+.background-indonesia h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+    font-size: 72px;
+}
+
+/* Add styles for the boxes container */
+.boxes-container {
+    display: flex;
+    justify-content: space-around; /* Distribute boxes evenly */
+    flex-wrap: wrap; /* Allow wrapping if the screen is too narrow */
+    gap: 20px; /* Space between boxes */
+    padding: 20px;
+    text-align: center; /* Center text within boxes */
+}
+
+/* Style for each box */
+.box {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Fixed width for boxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.box h2 {
+    margin-bottom: 10px; /* Space between heading and content */
+    font-size: 24px;
+    color: #333; /* Dark text for contrast */
+}
+
+.box p {
+    font-size: 16px;
+    color: #666; /* Slightly lighter text */
+}
+
+/* Responsive Design: Adjust layout on smaller screens */
+@media (max-width: 800px) {
+    .boxes-container {
+        flex-direction: column; /* Stack boxes vertically on small screens */
+        align-items: center; /* Center boxes horizontally */
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    section h1{
+        font-size: 48px; 
+        align-items: center;
+    }
+
+    #home h1{
+        font-size: 48px;
+    }
+
+    .container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .block {
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+.ml6 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+  }
+  
+  .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  .ml3 {
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+.ml3 .letter {
+    display: inline-block;
+    line-height: 1em;
+}

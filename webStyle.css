@@ -486,8 +486,11 @@ section p {
 }
 
 .btn:hover {
-    background-color: #222; /* Even darker on hover */
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: #fff; 
+    transition: background-color 0.3s, color 0.3s; 
 }
+
 
 
 /* Add z-index to the h1 text to ensure it stays above the background */

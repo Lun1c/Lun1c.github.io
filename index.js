@@ -1,134 +1,101 @@
-var sections = document.querySelectorAll('section'); // Select all sections
+var s=document.querySelectorAll('section'), 
+o=new IntersectionObserver(function(e){ 
+e.forEach(function(e){ 
+if(e.isIntersecting){ 
+var t=e.target.getAttribute('data-section-name'); 
+if(e.target.id==='home'){ 
+document.querySelector('.logo').textContent="Home"; 
+var n=document.querySelector('.ml2'); 
+n.innerHTML=n.textContent.replace(/\S/g,"<span class='letter'>$&</span>"), 
+anime.timeline({loop:!1}).add({ 
+targets:'.ml2 .letter', 
+scale:[4,1], 
+opacity:[0,1], 
+translateZ:0, 
+easing:"easeOutExpo", 
+duration:950, 
+delay:function(e,t){ 
+return 70*t 
+}}).add({ 
+targets:'.ml2', 
+opacity:1, 
+duration:1e3, 
+easing:"easeOutExpo" 
+}); 
+}else if(e.target.id==='new-zealand'){ 
+document.querySelector('.logo').textContent=t||"New Zealand", 
+anime({ 
+targets:'.staggering-direction-demo .el', 
+translateX:[-270,0], 
+opacity:[0,1], 
+delay:anime.stagger(100,{start:500}), 
+easing:'easeOutQuad' 
+}); 
+}else 
+document.querySelector('.logo').textContent=t||"Logo"; 
+}})}, 
+{threshold:.5}); 
 
-var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            var sectionName = entry.target.getAttribute('data-section-name'); // Get the section name
+s.forEach(function(e){ 
+o.observe(e); 
+}), 
 
-            if (entry.target.id === 'home') {
-                document.querySelector('.logo').textContent = "Home"; // Change logo to "Home"
+window.location.pathname.includes("contact.html")? 
+document.querySelector('.logo').textContent="Contact": 
+window.location.pathname.includes("japan.html")&& 
+(document.querySelector('.logo').textContent="Japan"); 
 
-                var textWrapper = document.querySelector('.ml2');
-                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-                
-                anime.timeline({loop: false})
-                  .add({
-                    targets: '.ml2 .letter',
-                    scale: [4, 1],
-                    opacity: [0, 1],
-                    translateZ: 0,
-                    easing: "easeOutExpo",
-                    duration: 950,
-                    delay: function(el, i) { return 70 * i; }
-                  }).add({
-                    targets: '.ml2',
-                    opacity: 1, 
-                    duration: 1000,
-                    easing: "easeOutExpo",
-                  });
-                
+var t=document.querySelector('.ml6 .letters'); 
+t.innerHTML=t.textContent.replace(/\S/g,"<span class='letter'>$&</span>"), 
+anime.timeline({loop:!1}).add({ 
+targets:'.ml6 .letter', 
+translateY:["1.1em",0], 
+translateZ:0, 
+duration:1250, 
+delay:function(e,t){ 
+return 100*t 
+}}).add({ 
+targets:'.ml6', 
+opacity:1, 
+duration:1250, 
+easing:"easeOutExpo" 
+}); 
 
-            } else if (entry.target.id === 'new-zealand') {
-                document.querySelector('.logo').textContent = sectionName || "New Zealand"; // Change logo to "New Zealand"
+document.addEventListener('DOMContentLoaded',function(){ 
+var e=document.querySelector('.ml3'); 
+e.innerHTML=e.textContent.replace(/\S/g,"<span class='letter'>$&</span>"), 
+anime.timeline({loop:!0}).add({ 
+targets:'.ml3 .letter', 
+opacity:[0,1], 
+easing:"easeInOutQuad", 
+duration:2250, 
+delay:function(e,t){ 
+return 150*(t+1) 
+}}).add({ 
+targets:'.ml3', 
+opacity:0, 
+duration:1e3, 
+easing:"easeOutExpo", 
+delay:1e3 
+}); 
+}); 
 
-                // Trigger the animation for New Zealand boxes
-                anime({
-                    targets: '.staggering-direction-demo .el',
-                    translateX: [-270, 0], // Right to left
-                    opacity: [0, 1],      // Fades in
-                    delay: anime.stagger(100, { start: 500 }), // Staggered effect
-                    easing: 'easeOutQuad'
-                });
+var b=document.querySelectorAll('section'); 
+b.length>0&&(s=new IntersectionObserver(function(e){ 
+e.forEach(function(e){ 
+if(e.isIntersecting){ 
+var t=e.target.getAttribute('data-section-name'); 
+}})}, 
+{threshold:.5}), 
 
-            } else {
-                document.querySelector('.logo').textContent = sectionName || "Logo"; // Change logo based on section name
-            }
-        }
-    }); 
-}, {
-    threshold: 0.5 // Trigger when half the section is visible
-});
+b.forEach(function(e){ 
+s.observe(e); 
+}), 
 
-// Observe each section
-sections.forEach(function(section) {
-    observer.observe(section);
-});
-
-// On contact page load, change logo to "Contact"
-if (window.location.pathname.includes("contact.html")) {
-    document.querySelector('.logo').textContent = "Contact";
-}
-
-// new zealand js
-var textWrapper = document.querySelector('.ml6 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: false})  // plays only once
-  .add({
-    targets: '.ml6 .letter',
-    translateY: ["1.1em", 0],
-    translateZ: 0,
-    duration: 1250,  // duration for  animation
-    delay: (el, i) => 100 * i  // delay between each letter
-  }).add({
-    targets: '.ml6',
-    opacity: 1,  
-    duration: 1250,  //  duration for a smoother fade-in
-    easing: "easeOutExpo"
-  });
-
-// japan js
-// Wrap every letter in a span
-document.addEventListener('DOMContentLoaded', function() {
-  // Japan js animation
-  var textWrapper = document.querySelector('.ml3');
-  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-  anime.timeline({loop: true})
-    .add({
-      targets: '.ml3 .letter',
-      opacity: [0, 1],
-      easing: "easeInOutQuad",
-      duration: 2250,
-      delay: (el, i) => 150 * (i + 1)
-    }).add({
-      targets: '.ml3',
-      opacity: 0,
-      duration: 1000,
-      easing: "easeOutExpo",
-      delay: 1000
-    });
-});
-
-
-
-  // On contact page load, change logo to "Contact"
-if (window.location.pathname.includes("contact.html")) {
-  document.querySelector('.logo').textContent = "Contact";
-} else if (window.location.pathname.includes("japan.html")) {
-  document.querySelector('.logo').textContent = "Japan";
-}
-
-var sections = document.querySelectorAll('section');
-if (sections.length > 0) {
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                var sectionName = entry.target.getAttribute('data-section-name');
-                // Your existing section logic
-            }
-        });
-    }, { threshold: 0.5 });
-
-    sections.forEach(function(section) {
-        observer.observe(section);
-    });
-}
-
-anime({
-  targets: '.boxes-container .box',
-  translateY: [50, 0],
-  opacity: [0, 1],
-  delay: anime.stagger(150, { start: 500 }),
-  easing: 'easeOutQuad'
-});
+anime({ 
+targets:'.boxes-container .box', 
+translateY:[50,0], 
+opacity:[0,1], 
+delay:anime.stagger(150,{start:500}), 
+easing:'easeOutQuad' 
+}));
